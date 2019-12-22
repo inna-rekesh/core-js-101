@@ -8,8 +8,6 @@
  ******************************************************************************************* */
 
 
-/*eslint-disable */
-
 /**
  * Returns an area of a rectangle given by width and heigth.
  *
@@ -131,7 +129,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  return parseInt((`${value}`).split('').pop(), 10)
+  return parseInt((`${value}`).split('').pop(), 10);
 }
 
 
@@ -147,7 +145,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-  return parseFloat(value)
+  return parseFloat(value);
 }
 
 /**
@@ -164,6 +162,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
+  // eslint-disable-next-line no-restricted-properties
   return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2));
 }
 
@@ -230,8 +229,8 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  if(Number(value)){
-    return  Number(value);
+  if (Number(value)) {
+    return Number(value);
   }
   return def;
 }

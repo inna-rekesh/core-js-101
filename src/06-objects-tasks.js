@@ -5,7 +5,6 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object        *
  *                                                                                                *
  ************************************************************************************************ */
-/*eslint-disable */
 
 /**
  * Returns the rectagle object with width and height parameters and getArea() method
@@ -23,7 +22,7 @@
 function Rectangle(width, height) {
   this.width = width;
   this.height = height;
-  this.getArea = function () {
+  this.getArea = function a() {
     return this.width * this.height;
   };
 }
@@ -56,7 +55,7 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
- return Object.assign(Object.create(proto), JSON.parse(json));
+  return Object.assign(Object.create(proto), JSON.parse(json));
 }
 
 

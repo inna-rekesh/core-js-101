@@ -8,7 +8,7 @@
  *                                                                                             *
  ********************************************************************************************* */
 
-/*eslint-disable */
+
 /**
  * Returns the functions composition of two specified functions f(x) and g(x).
  * The result of compose is to be a function of one argument, (lets call the argument x),
@@ -48,6 +48,7 @@ function getComposition(f, g) {
  */
 function getPowerFunction(exponent) {
   return function closure(a) {
+    // eslint-disable-next-line no-restricted-properties
     return Math.pow(a, exponent);
   };
 }
@@ -161,7 +162,7 @@ function logger(/* func, logFunc */) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn, ...args1) {
- return (...newArgs) => fn(...args1, ...newArgs);
+  return (...newArgs) => fn(...args1, ...newArgs);
 }
 
 
@@ -184,7 +185,8 @@ function partialUsingArguments(fn, ...args1) {
  */
 function getIdGeneratorFunction(startFrom) {
   let counter = startFrom;
-  return function () {
+  return function a() {
+    // eslint-disable-next-line no-plusplus
     return counter++;
   };
 }

@@ -7,7 +7,6 @@
  *                                                                                            *
  ******************************************************************************************** */
 
-/*eslint-disable */
 /**
  * Returns an index of the specified element in array or -1 if element is not found
  *
@@ -211,7 +210,6 @@ function toCsvText(arr) {
     const res = `${a}${b.join(',')}\n`;
     return res;
   }, '').slice(0, -1);
-
 }
 
 /**
@@ -305,7 +303,7 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-  return arr.sort((a, b) => b - a).slice(0, 3)
+  return arr.sort((a, b) => b - a).slice(0, 3);
 }
 
 
@@ -323,9 +321,7 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  return arr.reduce((a, b) => {
-   return  b > 0 && typeof b === 'number' ? a + 1 : a;
-  }, 0);
+  return arr.reduce((a, b) => (b > 0 && typeof b === 'number' ? a + 1 : a), 0);
 }
 
 /**
@@ -342,17 +338,17 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-  let obj = {
-    'zero': 0,
-    'one': 1,
-    'two': 2,
-    'three': 3,
-    'four': 4,
-    'five': 5,
-    'six': 6,
-    'seven': 7,
-    'eight': 8,
-    'nine': 9
+  const obj = {
+    zero: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
   };
 
   return arr.sort((a, b) => obj[a] - obj[b]);
@@ -514,11 +510,7 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  let arr = [];
-  for (let i = start; i <= end; i++) {
-    arr.push(i);
-  }
-  return arr;
+  return Array(end - start + 1).fill(start).map((item, i) => item + i);
 }
 
 /**
