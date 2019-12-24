@@ -152,6 +152,7 @@ function logger(/* func, logFunc */) {
  * Return the function with partial applied arguments
  *
  * @param {Function} fn
+ * @param args1
  * @return {Function}
  *
  * @example
@@ -186,8 +187,9 @@ function partialUsingArguments(fn, ...args1) {
 function getIdGeneratorFunction(startFrom) {
   let counter = startFrom;
   return function a() {
-    // eslint-disable-next-line no-plusplus
-    return counter++;
+    const result = counter;
+    counter += 1;
+    return result;
   };
 }
 

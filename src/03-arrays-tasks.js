@@ -383,14 +383,7 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-  let count = 0;
-  arr.forEach((x) => {
-    if (Boolean(x) === false) {
-      // eslint-disable-next-line no-plusplus
-      count++;
-    }
-  });
-  return count;
+  return arr.reduce((a, b) => (!b === true ? a + 1 : a), 0);
 }
 
 /**
@@ -408,14 +401,7 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-  let counter = 0;
-  arr.forEach((x) => {
-    if (x === item) {
-      // eslint-disable-next-line no-plusplus
-      counter++;
-    }
-  });
-  return counter;
+  return arr.filter((element) => element === item).length;
 }
 
 /**
@@ -616,8 +602,13 @@ function getElementByIndexes(arr, indexes) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  if (arr.length === 1) return arr;
+  Math.floor(arr.length / 2);
+  const head = arr.slice(0, Math.floor(arr.length / 2));
+  const tail = arr.slice(-Math.floor(arr.length / 2));
+  const middle = (arr.length % 2) ? [arr[Math.floor(arr.length / 2)]] : [];
+  return tail.concat(middle).concat(head);
 }
 
 
